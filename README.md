@@ -19,7 +19,7 @@ Ou inclua:
 ## Usando
 Em node.js:
 ```js
-var buscaBR = require('../buscaBR');
+var buscaBR = require('busca-br');
 
 buscaBR.search('feijaum',['arroz','feijão','feijoada'],function(res){
 	console.log(res);
