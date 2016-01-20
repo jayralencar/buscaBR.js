@@ -4,4 +4,4 @@ buscaBR.search('feijaum',['arroz','feijão','feijoada'],function(res){
 	console.log(res);
 });
 
-console.log(buscaBR.encode('paralalepipedo'));
+console.log(buscaBR.encode('Já acabou jéssica?'));

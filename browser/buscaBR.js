@@ -73,5 +73,6 @@ function removeAcento(strToReplace) {
             nova += strToReplace.substr(i, 1);
         }
     }
+    var nova = nova.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
     return nova;
 }

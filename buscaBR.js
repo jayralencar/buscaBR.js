@@ -61,7 +61,6 @@ function squeeze(str){
 }
 
 
-
 function removeAcento(strToReplace) {
     str_acento = "ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ";
     str_sem_acento = "AAAAAEEEEIIIIOOOOOUUUUC";
@@ -73,6 +72,7 @@ function removeAcento(strToReplace) {
             nova += strToReplace.substr(i, 1);
         }
     }
+    var nova = nova.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
     return nova;
 }
 
