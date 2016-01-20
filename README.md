@@ -53,7 +53,7 @@ Se você deseja somente codificar o texto, para salvar no banco de dados por exe
   var buscabr = new buscaBR();
   console.log(console.log(buscaBR.encode('paralelepipedo')));
   //Vai retornar 
-  
+```  
 ## Exemplos de respostas
 <table>
   <tr>
