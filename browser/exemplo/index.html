@@ -1,0 +1,33 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Busca BR</title>
+</head>
+<body>
+	<input id="text" type="text" value="Codificar"><button id="codificar">Condificar</button>
+	<hr/>
+	<input id="pesquisa" type="text" placeholder="Pesquisa"><button id="pesquisar">Pesquisar</button>
+	<br/>
+	Pesquisar em: ['medo','raiva','amor', 'lembranca', 'ceará', 'google','coisas']
+	<br>
+	Resultado <p id="resultado"></p>
+
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="../buscaBr.js"></script>
+	<script type="text/javascript">
+		var buscabr = new buscaBR();
+
+		$('#codificar').click(function(){
+			alert(buscabr.encode($('#text').val()))
+		});
+
+		$('#pesquisar').click(function(){
+			var array = ['medo','raiva','amor', 'lembranca', 'ceará', 'google','coisas'];
+			buscabr.search($('#pesquisa').val(), array, function(res){
+				$('#resultado').html(JSON.stringify(res))
+			})
+		})
+	</script>
+</body>
+
+</html>

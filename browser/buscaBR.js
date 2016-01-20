@@ -75,6 +75,3 @@ function removeAcento(strToReplace) {
     }
     return nova;
 }
-
-
-module.exports = new buscaBR();
