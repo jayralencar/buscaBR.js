@@ -1,0 +1,38 @@
+{
+  "name": "busca-br",
+  "description": "Node module to sqlite sync and async ",
+   "readmeFilename": "README.md" ,
+  "keywords": [
+    "sqlite",
+    "sqlite3",
+    "sync",
+    "async",
+    "database"
+  ],
+  "tags": [
+    "sqlite",
+    "sqlite3",
+    "sync",
+    "async",
+    "database"
+  ],
+  "version": "0.0.1",
+  "author": {
+    "name": "Jayr Alencar",
+    "email": "jayralencarpereira@gmail.com",
+    "homepage": "http://www.jayralencar.com.br"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayrAlencar/buscaBR.js"
+  },
+  "dependencies":{
+    "sql.js":"0.2.0"
+  },
+  "scripts": { "test": "node test/test.js" },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "main": "buscaBR.js"
+}
