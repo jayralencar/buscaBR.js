@@ -1,5 +1,5 @@
 # buscaBR.js
-[![NPM](https://nodei.co/npm/busca-br.png?downloads=true&downloadRank=true)](https://nodei.co/npm/busca-br/)
+[![NPM](https://nodei.co/npm/sqlite-sync.png?downloads=true&downloadRank=true)](https://nodei.co/npm/sqlite-sync/)
 <br/>
 Pacote para facilitar buscas fonéticas usando o algoritmo buscaBR para JavaScript
 
@@ -22,7 +22,7 @@ Em node.js:
 var buscaBR = require('busca-br');
 
 buscaBR.search('feijaum',['arroz','feijão','feijoada'],function(res){
-	console.log(res);
+  console.log(res);
 });
 
 ```
@@ -35,7 +35,7 @@ Direto no Browser:
   <script>
     var buscabr = new buscaBR();
     buscaBR.search('feijaum',['arroz','feijão','feijoada'],function(res){
-    	alert(res[0].termo);
+      alert(res[0].termo);
     });
   </script>
 ```
@@ -73,6 +73,4 @@ Se você deseja somente codificar o texto, para salvar no banco de dados por exe
     <td>CRB D JK</td>
   </tr>
 </table>
-
-## Testando
-<a href="http://clubedosgeeks.com.br/buscabr/">http://clubedosgeeks.com.br/buscabr/</a>
+```
