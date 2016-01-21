@@ -1,6 +1,6 @@
 {
   "name": "busca-br",
-  "description": "Node module to sqlite sync and async ",
+  "description": "Modulo para usar o algoritmo buscaBR em javascript/node.js ",
    "readmeFilename": "README.md" ,
   "keywords": [
     "sqlite",
@@ -16,7 +16,7 @@
     "async",
     "database"
   ],
-  "version": "0.0.4",
+  "version": "0.1.0",
   "author": {
     "name": "Jayr Alencar",
     "email": "jayralencarpereira@gmail.com",
