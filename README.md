@@ -13,7 +13,7 @@ Se você for usar no browser salve este arquivo: <a href="https://raw.githubuser
 <br/>
 Ou inclua:
 ```
-<script src="https://raw.githubusercontent.com/JayrAlencar/buscaBR.js/master/browser/buscaBR.js"></script>
+<script src="//clubedosgeeke.com.br/buscabr/js/buscaBR.js"></script>
 ```
 
 ## Usando
@@ -31,7 +31,7 @@ A resposta é um array de objetos JSON informando o termo encontrado e o index q
 Direto no Browser:
 
 ```html
-  <script src="https://raw.githubusercontent.com/JayrAlencar/buscaBR.js/master/browser/buscaBR.js"></script>
+  <script src="//clubedosgeeke.com.br/buscabr/js/buscaBR.js"></script>
   <script>
     var buscabr = new buscaBR();
     buscaBR.search('feijaum',['arroz','feijão','feijoada'],function(res){
