@@ -1,5 +1,5 @@
 # buscaBR.js
-[![NPM](https://nodei.co/npm/sqlite-sync.png?downloads=true&downloadRank=true)](https://nodei.co/npm/sqlite-sync/)
+[![NPM](https://nodei.co/npm/busca-br.png?downloads=true&downloadRank=true)](https://nodei.co/npm/busca-br/)
 <br/>
 Pacote para facilitar buscas fonéticas usando o algoritmo buscaBR para JavaScript
 
