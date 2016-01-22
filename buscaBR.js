@@ -2,24 +2,6 @@ function buscaBR(){
 
 }
 
-buscaBR.prototype.codes =  [ [/BL|BR/, 'B'],
-    ['PH', 'F'],
-    [/GL|GR|MG|NG|RG/, 'G'],
-    ['Y', 'I'],
-    [/GE|GI|RJ|MJ/, 'J'],
-    [/CA|CO|CU|CK|Q/, 'K'],
-    ['N', 'M'],
-    [/AO|AUM|GM|MD|OM|ON/, 'M'],
-    ['PR', 'P'],
-    ['L', 'R'],
-    [/CE|CI|CH|CS|RS|TS|X|Z/, 'S'],
-    [/TR|TL/, 'T'],
-    [/CT|RT|ST|PT/, 'T'],
-    [/\b[UW]/, 'V'],
-    ['RM', 'SM'],
-    [/[MRS]+\b/, ''],
-    [/[AEIOUH]/, ''] ];
-
 
 buscaBR.prototype.searchSync = function(str, array){
 	var results = [];
@@ -38,9 +20,26 @@ buscaBR.prototype.search = function(str, array, callback){
 
 buscaBR.prototype.encode = function(str){
 	str = removeAcento(str.toUpperCase());
-	for(var i = 0; i < this.codes.length; i++){
+    var codes =  [ [/BL|BR/, 'B'],
+        ['PH', 'F'],
+        [/GL|GR|MG|NG|RG/, 'G'],
+        ['Y', 'I'],
+        [/GE|GI|RJ|MJ/, 'J'],
+        [/CA|CO|CU|CK|Q/, 'K'],
+        ['N', 'M'],
+        [/AO|AUM|GM|MD|OM|ON/, 'M'],
+        ['PR', 'P'],
+        ['L', 'R'],
+        [/CE|CI|CH|CS|RS|TS|X|Z/, 'S'],
+        [/TR|TL/, 'T'],
+        [/CT|RT|ST|PT/, 'T'],
+        [/\b[UW]/, 'V'],
+        ['RM', 'SM'],
+        [/[MRS]+\b/, ''],
+        [/[AEIOUH]/, ''] ];
+	for(var i = 0; i < codes.length; i++){
 		// str = str.replace(this.codes[i][0],this.codes[i][1]);
-		str = str.split(this.codes[i][0]).join(this.codes[i][1])
+		str = str.split(codes[i][0]).join(codes[i][1])
 	}
 
 	str = squeeze(str);

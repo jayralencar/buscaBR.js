@@ -50,10 +50,17 @@ Esta função faz a pesquisa de forma sincrona e retorna um array de objetos JSO
 ## encode()
 Se você deseja somente codificar o texto, para salvar no banco de dados por exemplo, use o método encode();
 ```js
-  var buscabr = new buscaBR();
-  console.log(console.log(buscaBR.encode('paralelepipedo')));
+  var buscabr = require('busca-br').encode();
+  console.log(buscabr('paralalepipedo'));
   //Vai retornar 
 ```  
+
+Ou no browser..
+```js
+  var buscabr = new buscaBR();
+  alert(buscabr.encode('paralalepipedo'))
+```
+
 ## Exemplos de respostas
 <table>
   <tr>
@@ -73,4 +80,3 @@ Se você deseja somente codificar o texto, para salvar no banco de dados por exe
     <td>CRB D JK</td>
   </tr>
 </table>
-```
