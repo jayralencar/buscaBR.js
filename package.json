@@ -3,11 +3,9 @@
   "description": "Modulo para usar o algoritmo buscaBR em javascript/node.js ",
    "readmeFilename": "README.md" ,
   "keywords": [
-    "sqlite",
-    "sqlite3",
-    "sync",
-    "async",
-    "database"
+    "busca",
+    "fonetica",
+    "index"
   ],
   "tags": [
     "sqlite",
@@ -16,7 +14,7 @@
     "async",
     "database"
   ],
-  "version": "0.1.6",
+  "version": "0.1.7",
   "author": {
     "name": "Jayr Alencar",
     "email": "jayralencarpereira@gmail.com",
