@@ -78,8 +78,8 @@
 
 
   function removeAcento(strToReplace) {
-    str_acento = "ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ";
-    str_sem_acento = "AAAAAEEEEIIIIOOOOOUUUUC";
+    var str_acento = "ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ";
+    var str_sem_acento = "AAAAAEEEEIIIIOOOOOUUUUC";
     var nova = "";
     for (var i = 0; i < strToReplace.length; i++) {
       if (str_acento.indexOf(strToReplace.charAt(i)) != -1) {

@@ -8,13 +8,11 @@
     "index"
   ],
   "tags": [
-    "sqlite",
-    "sqlite3",
-    "sync",
-    "async",
-    "database"
+    "busca",
+    "fonetica",
+    "buscaBR"
   ],
-  "version": "0.1.7",
+  "version": "0.2.0",
   "author": {
     "name": "Jayr Alencar",
     "email": "jayralencarpereira@gmail.com",

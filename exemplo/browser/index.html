@@ -15,15 +15,14 @@
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="../../buscaBr.js"></script>
 	<script type="text/javascript">
-		var buscabr = new buscaBR();
 
 		$('#codificar').click(function(){
-			alert(buscabr.encode($('#text').val()))
+			alert(buscaBR.encode($('#text').val()))
 		});
 
 		$('#pesquisar').click(function(){
 			var array = ['medo','raiva','amor', 'lembranca', 'ceará', 'google','coisas'];
-			buscabr.search($('#pesquisa').val(), array, function(res){
+			buscaBR.search($('#pesquisa').val(), array, function(res){
 				$('#resultado').html(JSON.stringify(res))
 			})
 		})
