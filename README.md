@@ -33,7 +33,6 @@ Direto no Browser:
 ```html
   <script src="//clubedosgeeke.com.br/buscabr/js/buscaBR.js"></script>
   <script>
-    var buscabr = new buscaBR();
     buscaBR.search('feijaum',['arroz','feijão','feijoada'],function(res){
       alert(res[0].termo);
     });
@@ -42,7 +41,6 @@ Direto no Browser:
 ## searchSync(str, array)
 Esta função faz a pesquisa de forma sincrona e retorna um array de objetos JSON com os resultados encontrados. Veja:
 ```js
-  var buscabr = new buscaBR();
   var resultado = buscabr.searchSync('feijaum',['arroz','feijão','feijoada']);
   console.log(resultado);
 ```
@@ -52,13 +50,11 @@ Se você deseja somente codificar o texto, para salvar no banco de dados por exe
 ```js
   var buscabr = require('busca-br').encode;
   console.log(buscabr('paralalepipedo'));
-  //Vai retornar 
 ```  
 
 Ou no browser..
 ```js
-  var buscabr = new buscaBR();
-  alert(buscabr.encode('paralalepipedo'))
+  alert(buscaBR.encode('paralalepipedo'))
 ```
 
 ## Exemplos de respostas
