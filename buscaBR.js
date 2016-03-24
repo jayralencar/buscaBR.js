@@ -77,19 +77,22 @@
   }
 
 
-  function removeAcento(strToReplace) {
-    var str_acento = "ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ";
-    var str_sem_acento = "AAAAAEEEEIIIIOOOOOUUUUC";
-    var nova = "";
-    for (var i = 0; i < strToReplace.length; i++) {
-      if (str_acento.indexOf(strToReplace.charAt(i)) != -1) {
-        nova += str_sem_acento.substr(str_acento.search(strToReplace.substr(i, 1)), 1);
-      } else {
-        nova += strToReplace.substr(i, 1);
+  function removeAcento(str) {
+    var i, x;
+    var ACENTOS     = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
+    var SEM_ACENTOS = 'AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz';
+
+    str = str.split('');
+
+    for (i = 0; i < str.length; i++) {
+      x = ACENTOS.indexOf(str[i])
+      if (x != -1) {
+        str[i] = SEM_ACENTOS[x];
       }
     }
-    var nova = nova.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
-    return nova;
+
+    str = str.join('');
+    return str.replace(/[^a-z0-9\s]/gi, '');
   }
 
 }());
