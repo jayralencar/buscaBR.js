@@ -35,20 +35,25 @@
     [/[AEIOUH]/, '']
   ];
 
-
-  buscaBR.searchSync = function(str, array){
+  buscaBR.searchSync = function (str, array) {
+    var i;
     var results = [];
-    for(var i = 0 ; i < array.length; i++){
-      if(this.encode(str) == this.encode(array[i])){
-        results.push({termo:array[i], index: i})
+
+    for (i = 0; i < array.length; i++) {
+      if (this.encode(str) == this.encode(array[i])) {
+        results.push({
+          termo: array[i],
+          index: i
+        });
       }
     }
-    return (results.length>0) ? results : {erro:"Não há registros"};
+
+    return results.length ? results : new Error('Não há registros');
   };
 
 
-  buscaBR.search = function(str, array, callback){
-    callback(this.searchSync(str, array));
+  buscaBR.search = function (str, array, callback) {
+    tratar_erro(this.searchSync(str, array), callback);
   };
 
 
@@ -63,6 +68,28 @@
 
     return str;
   };
+
+
+  /**
+   * Passa o erro como parametro caso seja experado pelo callback
+   *
+   * @param {Object} result
+   * @param {Function} done
+   * @return {Function}
+   */
+  function tratar_erro(result, done) {
+    if (done.length > 1) {
+      if (result instanceof Error) {
+        result = [result, null];
+      } else {
+        result = [null, result];
+      }
+    } else {
+      result = [result];
+    }
+
+    done.apply(this, result);
+  }
 
 
   function squeeze(str){
