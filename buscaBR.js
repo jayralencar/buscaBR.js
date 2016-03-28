@@ -91,15 +91,9 @@
    * @param {String} str - String para tratar
    * @return {String}
    */
-  function squeeze(str){
-    var cont = 0;
-    var newString='';
-    for(var i =  0 ; i < str.length; i++){
-      if(str[i] != str[i+1]){
-        newString +=str[i];
-      }
-    }
-    return newString;
+  function squeeze (str) {
+    str = str || '';
+    return str.replace(/(.)(?=\1)/g, '');
   }
 
 
