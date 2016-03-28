@@ -35,7 +35,6 @@
     [/[AEIOUH]/, '']
   ];
 
-
   /**
    * Busca sincrona da palavrá
    *
@@ -43,14 +42,20 @@
    * @param {Array} array - Dicionário de palavras
    * @return {Array|Object}
    */
-  buscaBR.searchSync = function(str, array){
+  buscaBR.searchSync = function (str, array) {
+    var i;
     var results = [];
-    for(var i = 0 ; i < array.length; i++){
-      if(this.encode(str) == this.encode(array[i])){
-        results.push({termo:array[i], index: i})
+
+    for (i = 0; i < array.length; i++) {
+      if (this.encode(str) == this.encode(array[i])) {
+        results.push({
+          termo: array[i],
+          index: i
+        });
       }
     }
-    return (results.length>0) ? results : {erro:"Não há registros"};
+
+    return results.length ? results : new Error('Não há registros');
   };
 
 
@@ -61,8 +66,8 @@
    * @param {Array} array - Dicionário de palavras
    * @param {Function} callback - Função para executar após a busca
    */
-  buscaBR.search = function(str, array, callback){
-    callback(this.searchSync(str, array));
+  buscaBR.search = function (str, array, callback) {
+    tratar_erro(this.searchSync(str, array), callback);
   };
 
 
@@ -94,6 +99,26 @@
   function squeeze (str) {
     str = str || '';
     return str.replace(/(.)(?=\1)/g, '');
+  }
+  /**
+   * Passa o erro como parametro caso seja experado pelo callback
+   *
+   * @param {Object} result
+   * @param {Function} done
+   * @return {Function}
+   */
+  function tratar_erro(result, done) {
+    if (done.length > 1) {
+      if (result instanceof Error) {
+        result = [result, null];
+      } else {
+        result = [null, result];
+      }
+    } else {
+      result = [result];
+    }
+
+    done.apply(this, result);
   }
 
 
