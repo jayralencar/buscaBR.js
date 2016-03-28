@@ -36,6 +36,13 @@
   ];
 
 
+  /**
+   * Busca sincrona da palavrá
+   *
+   * @param {String} str - String fonética
+   * @param {Array} array - Dicionário de palavras
+   * @return {Array|Object}
+   */
   buscaBR.searchSync = function(str, array){
     var results = [];
     for(var i = 0 ; i < array.length; i++){
@@ -47,11 +54,24 @@
   };
 
 
+  /**
+   * Buscar pela palavra foneticamente
+   *
+   * @param {String} str - String fonética
+   * @param {Array} array - Dicionário de palavras
+   * @param {Function} callback - Função para executar após a busca
+   */
   buscaBR.search = function(str, array, callback){
     callback(this.searchSync(str, array));
   };
 
 
+  /**
+   * Codifica uma string
+   *
+   * @param {String} str - String para codificar
+   * @return {String}
+   */
   buscaBR.encode = function (str) {
     str = removeAcento(str.toUpperCase());
     for(var i = 0; i < codes.length; i++){
@@ -65,6 +85,12 @@
   };
 
 
+  /**
+   * Remove os caracteres repetidos sequencialmente em uma string
+   *
+   * @param {String} str - String para tratar
+   * @return {String}
+   */
   function squeeze(str){
     var cont = 0;
     var newString='';
@@ -77,6 +103,12 @@
   }
 
 
+  /**
+   * Remove os acentos existentes em uma string
+   *
+   * @param {String} strToReplace - Texo para remover os acentos
+   * @return {String}
+   */
   function removeAcento(strToReplace) {
     var str_acento = "ÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ";
     var str_sem_acento = "AAAAAEEEEIIIIOOOOOUUUUC";
