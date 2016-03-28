@@ -15,7 +15,7 @@
     window.buscaBR = buscaBR;
   }
 
-  var codes =  [
+  var CODES =  [
     [/BL|BR/, 'B'],
     ['PH', 'F'],
     [/GL|GR|MG|NG|RG/, 'G'],
@@ -74,9 +74,9 @@
    */
   buscaBR.encode = function (str) {
     str = removeAcento(str.toUpperCase());
-    for(var i = 0; i < codes.length; i++){
-      // str = str.replace(this.codes[i][0],this.codes[i][1]);
-      str = str.split(codes[i][0]).join(codes[i][1])
+    for(var i = 0; i < CODES.length; i++){
+      // str = str.replace(this.CODES[i][0],this.CODES[i][1]);
+      str = str.split(CODES[i][0]).join(CODES[i][1])
     }
 
     str = squeeze(str);
